@@ -60,7 +60,7 @@ app.delete("/repositories/:id", (request, response) => {
 
   const repository = repositories.findIndex(repository => repository.id === id);
 
-  if(repository > 0){
+  if(repository >= 0){
     repositories.splice(repository, 1);
   }else {
     return response.status(400).send();
